@@ -24,3 +24,11 @@ Since all data passes through my laptop it's easy to log it to a file and should
 It seems like the MB Air has better wifi performance as a router than the ESP8266, meaning longer range for other systems.
 Ofcause it adds and extra step between the camera and motor controller, but it seems to be worth it.
 
+## Artificial Intilligence - Python vs Node
+Being a newbie to the field of Machine learnign I can highly recommend these two series on machinelearnig:
+- Machine Learning Course - CS 156 by Caltech: https://www.youtube.com/watch?v=mbyG85GZ0PI&list=PLD63A284B7615313A,
+- Networks Demystified by Welch Labs: https://www.youtube.com/watch?v=bxe2T-V8XRs&list=PLK1aXp7PZ2tMrm1h_JDBcJDhIpbQZPOr1
+
+I used at least a day trying to figure out how to run any deep neural network code in python and never actually managed to run anything if I also wanted to be able to directly plot the results with Matplotlib. I think I tried: scikit-learn, PyBrain and scikit-neuralnetwork in all combinations with System (Python 2.7 installation), PyEnv (3.4, 3.5) and Anaconda. And in every instance there were something wrong. Just wanting to get something running I ended up using Synaptic:  http://synaptic.juancazala.com/, which can be run on Node or in your browser - plotting solved! And it worked out of the box! ah. It's sad that Python version and package management can be such a pain. 
+
+
