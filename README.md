@@ -4,6 +4,10 @@ General KiteX Project description
 
 #Learnings
 
+## Video Tracking - Open CV, GPUImage
+Initially I tried to install and run Open CV on my iPhone. After trying for hours I began seeking other options. I found a post/article by the creator of GPUImage showing GPU accelerated image/color tracking - and though it was perfect. I initially implemented the current solution with the original GPUImage, but later realized that a swift version GPUImage2 had been made.
+The API had changed slightly so I ended up rewriting most of it, with the logic mostly staying the same. GPUImage2 is really easy to work with and very powerful! Great job. 
+
 ## HTTP vs Websocket
 I always start out with the simplest solution that I expect to work. 
 In order to control the stepper motor I would send HTTP requests from my iPhone directly to the ESP8266, that which were acting as a accespoint.
