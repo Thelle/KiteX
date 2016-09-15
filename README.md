@@ -24,6 +24,7 @@ Do you share the same vision for a the kite future? contact us! :)
 
 # What are the steps?
 Given my background the most obvious route towards a kite mill is to (always go for the most difficult problems first, yet achievable)
+
 1. Create an autonomous flying kite (DONE)
 2. Create a tethered drone that can take off and land autonomously
 3. Combine 1 and 2 into a completely autonomous kite
@@ -37,24 +38,51 @@ On September the 13th, 2016 I managed to carry out a the first successful autono
 
 ### Autonomous Kite 002
 Overall the system consists of a kite, a motorized kite steering system, a laptop for control and a smartphone for video tracking.
-![Image of AK002 Setup](http://aokholm.github.io/KiteX/images/AK002Setup.jpg)
+![Image of AK002 Setup](https://aokholm.github.io/KiteX/images/AK002Setup.jpg)
 
-![Image of the AK002 dataflow](http://aokholm.github.io/KiteX/img/AK002DataFlow.jpg)
+*Significant parts mechanical:*
+
+* The kite is two lined foil kite HQ Symphony PRO 1.3. The kite were chosen for being the smallest high quality foil kite available. Being so small meant the pull would be the least powerful giving the stepper motor the best chance for staying in control. Thanks to [Dragestedet - Symphony](http://dragestedet.dk/product.asp?product=4179) for aiding in selecting the best kite. Chose the rainbow color options for best standout against the sky and grass.
+* Ronstan Series 20 Orbit blocks. Weighting only 9 grams each these 250 kg (working load) pulleys are light enough not to fall down and effecting the control in light wind and strong enough for the most serious gust.
+* NEMA-17 42BYGHW811 Stepper motor. This seems to be one of the most powerful (High torque and high speeds) NEMA-17 Steppers available. High Rated Current, Low Resistance and phase Inductance! [ArduinoTech.dk stepper](https://arduinotech.dk/shop/stepper-motor-nema17-42byghw811/) sells this motor incredible cheap seems to deliver reliably.
+* Solid storm anchors with the eye close to the ground. While this isn't a specific model I have been very happy with the performance of these **camping** storm anchors [Campingshop.dk](http://www.campingshop.dk/stormanker-med-oeje.aspx)
+
+![Image of AK002 Drive Assembly](https://aokholm.github.io/KiteX/images/AK002KiteDriveAssembly.png) Write me if you want to get some of the Fusion 360 CAD files.
 
 
+*Significant parts electronics:*
+* EPS8266 Adafruit Huzzah - A full featured easy to use WIFI microcontroller. [Flikto.de](https://www.flikto.de/products/adafruit-huzzah-esp8266-breakout) Everything has been working smoothly Once I figured out that I couldn't power it reliably from my Laptop USB Power source and instead used a LiPo battery while being connected with a serial connection with a FTDI cable.
+* Arduino Pro Mini 3V 8Mhz. A left over component I had - I would choose a more powerful microcontroller for the stepper motor control next time. Like a Teensy 3.2 or faster.
+* DRV8825 Stepper motor driver. These driver are cheap and can handle up to 2.2 Amps and 45 Volt, which is a lot for the small package and price.
+* 120 W DC Boost Converter [ebay.co.uk](http://www.ebay.co.uk/itm/272121657453) Perhaps a bit overkill for this application, but it allowed me to get a 38 Volt stepper drive current.
+* Batteries - I have been using a 14.4 Volt 1.5 Ah Lithium-ion battery from a Bosch powertool as the main Motor supply. Could be replaced by a 4 cell lithium-polymer battery. For the microcontroller logic I have been using a 2000 mAh (ish) 3.7 V single cell lithium-polymer battery from a Power bank.
 
+I also used my Macbook Air and a iPhone 6, but really any laptop and somewhat powerful smartphone will do.
 
+#### Data flow
 
+The camera observes the position of the kite and estimates the coordinate that best the describes the current position of the kite. This data is sent over Websocket connection over WIFI to the laptop. In a browser windows the tracking data can be observed in realtime and the kite position can be extrapolated in case of shorter tracking problems. The required control input is calculated and send off the ESP8266 microcontroller (also through a websocket over WIFI). From here the information goes to the Arduino which is solely responsible for controlling the step timing of the stepper motor. See the information flow diagram below
+![Image of the AK002 dataflow](https://aokholm.github.io/KiteX/images/AK002DataFlow.jpg)
 
+#### Source code and more can be found under the specific projects
 
-##Learnings
+* [ESP8266 Websocket and i2c master code](https://github.com/aokholm/KiteXEspWsSlave)
+* [Arduino Pro Mini i2c slave and stepper controller](https://github.com/aokholm/KiteXFastStepper) I simplified the AccelStepper library and optimized it this use case. Had big performance gains by precomputing the acceleration profile. Up from 2000 to 8000 steps per second.
+* [iOS GPU Accelerated Kite Tracking app](https://github.com/aokholm/KiteXKiteVideoTracking) Thanks to Brad Larson for providing this wonderful framework for doing video manipulation [GPUImage2](https://github.com/BradLarson/GPUImage2)
+* [Mission Control - Node.js websocket server and web interface and path following algorithms](https://github.com/aokholm/KiteXMissionControl)
+
+### Learnings
+
 Apologies, but these are somewhat random and unorganized at least for now.
 
-### Video Tracking - Open CV, GPUImage
+#### Accces Point
+Hack your mac to be an access point even without an internet connection to share. I successful followed this [tutorial](http://www.laszlopusztai.net/2016/02/14/creating-a-wi-fi-access-point-on-os-x/) and have been able to make a AP easily every time. Would of cause be nicer it it could be turned on and off from the command line so I could easily do it in a startup script in node
+
+#### Video Tracking - Open CV, GPUImage
 Initially I tried to install and run Open CV on my iPhone. After trying for hours I began seeking other options. I found a post/article by the creator of GPUImage showing GPU accelerated image/color tracking - and though it was perfect. I initially implemented the current solution with the original GPUImage, but later realized that a swift version GPUImage2 had been made.
 The API had changed slightly so I ended up rewriting most of it, with the logic mostly staying the same. GPUImage2 is really easy to work with and very powerful! Great job.
 
-### HTTP vs Websocket
+#### HTTP vs Websocket
 I always start out with the simplest solution that I expect to work.
 In order to control the stepper motor I would send HTTP requests from my iPhone directly to the ESP8266, that which were acting as a accespoint.
 However when getting close to 10-20 request per seconds the ESP would eventually crash. Further the latency were typical around 100 ms.
@@ -62,7 +90,7 @@ Eventually I decided to change to using websocket. It were suprisingly simple to
 I were able to achive a roundtrip latency of around 5 ms and it's rock stable.
 
 
-### WebsocketServer on Laptop or the ESP
+#### WebsocketServer on Laptop or the ESP
 Initially I tried to run the WebSocketServer on the ESP, but I ended up moving the server to the MacBook.
 This means I don't have to worry about the WebSocketServer performance. You can do faster iterations and easier debugging.
 The server could be written in a high level programming language.
@@ -70,7 +98,7 @@ Since all data passes through my laptop it's easy to log it to a file and should
 It seems like the MB Air has better wifi performance as a router than the ESP8266, meaning longer range for other systems.
 Ofcause it adds and extra step between the camera and motor controller, but it seems to be worth it.
 
-### Artificial Intilligence - Python vs Node
+#### Artificial Intilligence - Python vs Node
 Being a newbie to the field of Machine learnign I can highly recommend these two series on machinelearnig:
 - Machine Learning Course - CS 156 by Caltech: https://www.youtube.com/watch?v=mbyG85GZ0PI&list=PLD63A284B7615313A,
 - Networks Demystified by Welch Labs: https://www.youtube.com/watch?v=bxe2T-V8XRs&list=PLK1aXp7PZ2tMrm1h_JDBcJDhIpbQZPOr1
