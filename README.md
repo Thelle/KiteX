@@ -30,22 +30,31 @@ Given my background the most obvious route towards a kite mill is to (always go 
 4. Add energy generation
 5. Make it big
 
-## Step 1 - Autonomous kite
-On September the 13th, 2016 I managed to carry out a the first successful autonomous flight and record it at the same time. Check it out at: https://youtu.be/O_YaRTxpii8.
+
+
+# Step 1 - Autonomously flying kite
+On September the 13th, 2016 I managed to carry out a the first successful autonomous flight (and record it at the same time. Check it out at: https://youtu.be/O_YaRTxpii8.
+
+### Autonomous Kite 002
+Overall the system consists of a kite, a motorized kite steering system, a laptop for control and a smartphone for video tracking.
+![Image of Yaktocat](https://aokholm.github.com/images/yaktocat.png)
+
+![Image of Yaktocat](https://aokholm.github.com/images/yaktocat.png)
 
 
 
 
 
 
-#Learnings
+
+##Learnings
 Apologies, but these are somewhat random and unorganized at least for now.
 
-## Video Tracking - Open CV, GPUImage
+### Video Tracking - Open CV, GPUImage
 Initially I tried to install and run Open CV on my iPhone. After trying for hours I began seeking other options. I found a post/article by the creator of GPUImage showing GPU accelerated image/color tracking - and though it was perfect. I initially implemented the current solution with the original GPUImage, but later realized that a swift version GPUImage2 had been made.
 The API had changed slightly so I ended up rewriting most of it, with the logic mostly staying the same. GPUImage2 is really easy to work with and very powerful! Great job.
 
-## HTTP vs Websocket
+### HTTP vs Websocket
 I always start out with the simplest solution that I expect to work.
 In order to control the stepper motor I would send HTTP requests from my iPhone directly to the ESP8266, that which were acting as a accespoint.
 However when getting close to 10-20 request per seconds the ESP would eventually crash. Further the latency were typical around 100 ms.
@@ -53,7 +62,7 @@ Eventually I decided to change to using websocket. It were suprisingly simple to
 I were able to achive a roundtrip latency of around 5 ms and it's rock stable.
 
 
-## WebsocketServer on Laptop or the ESP
+### WebsocketServer on Laptop or the ESP
 Initially I tried to run the WebSocketServer on the ESP, but I ended up moving the server to the MacBook.
 This means I don't have to worry about the WebSocketServer performance. You can do faster iterations and easier debugging.
 The server could be written in a high level programming language.
@@ -61,7 +70,7 @@ Since all data passes through my laptop it's easy to log it to a file and should
 It seems like the MB Air has better wifi performance as a router than the ESP8266, meaning longer range for other systems.
 Ofcause it adds and extra step between the camera and motor controller, but it seems to be worth it.
 
-## Artificial Intilligence - Python vs Node
+### Artificial Intilligence - Python vs Node
 Being a newbie to the field of Machine learnign I can highly recommend these two series on machinelearnig:
 - Machine Learning Course - CS 156 by Caltech: https://www.youtube.com/watch?v=mbyG85GZ0PI&list=PLD63A284B7615313A,
 - Networks Demystified by Welch Labs: https://www.youtube.com/watch?v=bxe2T-V8XRs&list=PLK1aXp7PZ2tMrm1h_JDBcJDhIpbQZPOr1
