@@ -37,9 +37,9 @@ On September the 13th, 2016 I managed to carry out a the first successful autono
 
 ### Autonomous Kite 002
 Overall the system consists of a kite, a motorized kite steering system, a laptop for control and a smartphone for video tracking.
-![Image of Yaktocat](https://aokholm.github.com/images/yaktocat.png)
+![Image of AK002 Setup](http://aokholm.github.io/KiteX/images/AK002Setup.jpg)
 
-![Image of Yaktocat](https://aokholm.github.com/images/yaktocat.png)
+![Image of the AK002 dataflow](http://aokholm.github.io/KiteX/img/AK002DataFlow.jpg)
 
 
 
