@@ -1,5 +1,5 @@
 # KiteX Project Overview
-**Quick Status:** On September 13th I succeded in creating a autonomous flying kite. More details about the AK002 prototype below.
+**Quick Status:** On September 13th I succeded in creating a autonomous flying kite. Source code and components list for the AK002 prototype further down this page!
 
 ![Gif of AK002 flying autonomously](https://aokholm.github.io/KiteX/images/AK002Flying.gif)
 
