@@ -26,6 +26,9 @@ I have a mixed design, mechanical and aerospace degree from the Technical Univer
 
 I have for a long time been fascinated by the power of kites, and been using them for surfing for the past 10+ years. Being able to work with kites is really fascinating for me and I find that it allows me to use most of my toolset: mechanics, aerodynamics, programming, startups and most importantly it gives a feeling of making a positive impact.
 
+![Wind meter testing in Norway](https://aokholm.github.io/KiteX/images/AndreasNorway.jpg)
+
+
 ### Want to join?
 Do you share the same vision for a the kite future? contact us! :)
 
