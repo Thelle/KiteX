@@ -3,6 +3,7 @@
 Traditional wind mills is often the preferred solutions when creating new power plants due low price per watt and environmental impact. **Using kites as a mean of capturing wind energy has the potential to significantly reduce the cost of energy.**
 
 The energy that you can extract from the wind is largely related with the swept area of the wind turbine. A kite is able to sweep a given area with a much smaller system than a traditional turbine. A tether to the ground can replaces most of the *previously* necessary support structure, the inner parts of the wings, the tower and foundation. Makani, the currently leading commercial kite energy project,  estimates that their kite system can deliver approximately **10 times the energy per weight** of a traditional wind turbine.
+
 ![Kite Energy Concept](https://aokholm.github.io/KiteX/images/KiteEnergyConcept.jpg)
 
 Two further advantages of the kite system is that it can more easily capture wind at higher altitudes where the wind is more consistent, delivering the rated output a higher degree of the time. This will become especially important as a larger portion of the locally generated energy is from "unreliable" sources. Since the bending moment on the foundation of a kite mill is small to non-existent it will be much easier to setup these kite system in offshore conditions.
