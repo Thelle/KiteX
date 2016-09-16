@@ -1,4 +1,7 @@
 # KiteX Project Overview
+**Quick Status:** On September 13th I succeded in creating a autonomous flying kite. More details about the AK002 prototype below.
+![Gif of AK002 flying autonomously](https://aokholm.github.io/KiteX/images/AK002Flying.gif)
+
 ## Why is Kite Energy interesting?
 Traditional wind mills is often the preferred solutions when creating new power plants due low price per watt and environmental impact. **Using kites as a mean of capturing wind energy has the potential to significantly reduce the cost of energy.**
 
@@ -35,11 +38,11 @@ This is the plan so far (subject to change). Its designed with the philosophy of
 5. Make it big
 
 # Step 1 - Autonomously flying kite
-On September the 13th, 2016 I managed to carry out a the first successful autonomous flight! Check out the description of the AK002 below and see a 1 minute clip of the system in action [youtube](https://youtu.be/O_YaRTxpii8)
-![Gif of AK002 flying autonomously](https://aokholm.github.io/KiteX/images/AK002Flying.gif)
-
+Information about the Autonomous Kite 001 prototype will follow later.
 
 ### Autonomous Kite 002
+On September the 13th, 2016 I managed to carry out the first successful autonomous flight! See a 1 minute clip of the system in action **[Video - youtube.com](https://youtu.be/O_YaRTxpii8)**
+
 Overall the system consists of a kite, a motorized kite steering system, a laptop for control and a smartphone for video tracking.
 ![Image of AK002 Setup](https://aokholm.github.io/KiteX/images/AK002Setup.jpg)
 
