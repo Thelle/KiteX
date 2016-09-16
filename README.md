@@ -1,5 +1,6 @@
 # KiteX Project Overview
 **Quick Status:** On September 13th I succeded in creating a autonomous flying kite. More details about the AK002 prototype below.
+
 ![Gif of AK002 flying autonomously](https://aokholm.github.io/KiteX/images/AK002Flying.gif)
 
 ## Why is Kite Energy interesting?
@@ -40,8 +41,8 @@ This is the plan so far (subject to change). Its designed with the philosophy of
 # Step 1 - Autonomously flying kite
 Information about the Autonomous Kite 001 prototype will follow later.
 
-### Autonomous Kite 002
-On September the 13th, 2016 I managed to carry out the first successful autonomous flight! See a 1 minute clip of the system in action **[Video - youtube.com](https://youtu.be/O_YaRTxpii8)**
+### Autonomous Kite 002 **[Video clip](https://youtu.be/O_YaRTxpii8)**
+On September the 13th, 2016 I managed to carry out the first successful autonomous flight - Check out the video link above!
 
 Overall the system consists of a kite, a motorized kite steering system, a laptop for control and a smartphone for video tracking.
 ![Image of AK002 Setup](https://aokholm.github.io/KiteX/images/AK002Setup.jpg)
