@@ -73,6 +73,7 @@ I also used my Macbook Air and a iPhone 6, but really any laptop and somewhat po
 #### Data flow
 
 The camera observes the position of the kite and estimates the coordinate that best the describes the current position of the kite. This data is sent over Websocket connection over WIFI to the laptop. In a browser windows the tracking data can be observed in realtime and the kite position can be extrapolated in case of shorter tracking problems. The required control input is calculated and send off the ESP8266 microcontroller (also through a websocket over WIFI). From here the information goes to the Arduino which is solely responsible for controlling the step timing of the stepper motor. See the information flow diagram below
+
 ![Image of the AK002 dataflow](https://aokholm.github.io/KiteX/images/AK002DataFlow.jpg)
 
 #### Source code and more can be found under the specific projects
