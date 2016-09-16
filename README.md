@@ -1,15 +1,16 @@
 # KiteX Project Overview
 ## Why is Kite Energy interesting?
-Traditional wind mills is often the preferred solutions when creating new power plants due low price per watt and environmental impact. Using kites as a mean of capturing wind energy has the potential to significantly reduce the cost of energy.
+Traditional wind mills is often the preferred solutions when creating new power plants due low price per watt and environmental impact. **Using kites as a mean of capturing wind energy has the potential to significantly reduce the cost of energy.**
 
-The energy that you can extract from the wind is largely related with the swept area of the wind turbine. A kite is able to sweep a given area with a much smaller system than a traditional turbine. A tether to the ground can replaces most of the *previously* necessary support structure, the inner parts of the wings, the tower and foundation. Makani, the currently leading commercial kite energy project,  estimates that their kite system can deliver approximately 10 times the energy per weight of a traditional wind turbine.
+The energy that you can extract from the wind is largely related with the swept area of the wind turbine. A kite is able to sweep a given area with a much smaller system than a traditional turbine. A tether to the ground can replaces most of the *previously* necessary support structure, the inner parts of the wings, the tower and foundation. Makani, the currently leading commercial kite energy project,  estimates that their kite system can deliver approximately **10 times the energy per weight** of a traditional wind turbine.
+![Kite Energy Concept](https://aokholm.github.io/KiteX/images/KiteEnergyConcept.jpg)
 
 Two further advantages of the kite system is that it can more easily capture wind at higher altitudes where the wind is more consistent, delivering the rated output a higher degree of the time. This will become especially important as a larger portion of the locally generated energy is from "unreliable" sources. Since the bending moment on the foundation of a kite mill is small to non-existent it will be much easier to setup these kite system in offshore conditions.
 
 From a technical perspective it would have been possible to make such a kite ever since the invention of the computer, but right now we are getting to a point in time where both advanced enough materials and computer technology is readily available (cheap enough).
 
 ## What is the purpose of KiteX
-We would like to promote and carry out the development of kite technology in order to create a future where energy is cheaper and renewable. We think one cheaper energy could help societies reduce the average amount of "hard" work required to sustain a given living standard freeing up time to pursue more interesting exercises. We find the reflections in these answers quite interesting: https://www.quora.com/If-energy-was-free-and-renewable-how-would-the-economy-be-fundamentally-different-from-what-it-is-now
+We would like to promote and carry out the development of kite technology in order to create a future where energy is cheaper and renewable. We think one cheaper energy could help societies reduce the average amount of "hard" work required to sustain a given living standard freeing up time to pursue more interesting exercises. We find the reflections in these answers quite interesting: [Quora - if energy was  free](https://www.quora.com/If-energy-was-free-and-renewable-how-would-the-economy-be-fundamentally-different-from-what-it-is-now)
 
 In order to promote this future KiteX will be a project and company focusing on research and development of kite-systems and we will make sure to share all learnings we can, while still retaining necessary knowhow in-house in order to be a viable business.
 
