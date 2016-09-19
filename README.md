@@ -114,8 +114,9 @@ Being a newbie to the field of Machine learning I can highly recommend these two
 I used at least a day trying to figure out how to run any deep neural network code in python and never actually managed to run anything if I also wanted to be able to directly plot the results with Matplotlib. I think I tried: scikit-learn, PyBrain and scikit-neuralnetwork in all combinations with System (Python 2.7 installation), PyEnv (3.4, 3.5) and Anaconda. And in every instance there were something wrong. Just wanting to get something running I ended up using Synaptic:  http://synaptic.juancazala.com/, which can be run on Node or in your browser - plotting solved! And it worked out of the box! ah. It's sad that Python version and package management can be such a pain.
 
 
-# Cool Articles about Airborne wind energy
+# Cool (Relevant) Articles for Kite Energy
 
 * M.L. LOYD.  "Crosswind kite power (for large-scale wind power production)" Journal of Energy, Vol. 4, No. 3 (1980), pp. 106-111.
 [link](http://edge.rit.edu/content/R15901/public/Matt%20Kennedy/homes.esat.kuleuven.be_~highwind_wp-content_uploads_2011_07_Loyd1980.pdf))
 * Diehl, Moritz. "Airborne wind energy: Basic concepts and physical foundations." Airborne Wind Energy. Springer Berlin Heidelberg, 2013. 3-22. [link](http://homes.esat.kuleuven.be/~highwind/wp-content/uploads/2013/08/Diehl2013a.pdf)
+* Giesbrecht, J., et al. "Path tracking for unmanned ground vehicle navigation." DRDC Suffield TM 224 (2005). [link](http://cradpdf.drdc-rddc.gc.ca/PDFS/unc45/p524913.pdf)
