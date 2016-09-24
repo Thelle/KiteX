@@ -40,7 +40,7 @@ The plan towards kite energy is designed with the philosophy of dealing with the
 4. Add energy generation
 5. Make it big
 
-# Step 1 - Autonomously flying kite
+## Step 1 - Autonomously flying kite
 Information about the Autonomous Kite 001 prototype will follow later.
 
 ### Autonomous Kite 002 **[Video clip](https://youtu.be/O_YaRTxpii8)**
@@ -83,40 +83,16 @@ The camera observes the position of the kite and estimates the coordinate that b
 * [Mission Control - Node.js websocket server and web interface and path following algorithms](https://github.com/aokholm/KiteXMissionControl)
 * [Kite AI Neural Netowrk - not in use](https://github.com/aokholm/KiteXAI) Using a neural network to the control kite. It does work in the simulator, but currently not in use as I opted for using a pure pursuit path following algorithm instead.
 
-### Learnings
-
-A bit of unorganized learnings leading up to the AK002 prototype.
-
-#### Accces Point
-Hack your mac to be an access point even without an internet connection to share. I successful followed this [tutorial](http://www.laszlopusztai.net/2016/02/14/creating-a-wi-fi-access-point-on-os-x/) and have been able to make a AP easily every time. Would of cause be nicer it it could be turned on and off from the command line so I could easily do it in a startup script in node
-
-#### Video Tracking - Open CV, GPUImage
-Initially I tried to install and run Open CV on my iPhone. After trying for hours I began seeking other options. I found a [post/article])http://www.sunsetlakesoftware.com/2010/10/22/gpu-accelerated-video-processing-mac-and-ios) by the creator of GPUImage showing GPU accelerated image/color tracking - and though it was perfect. I initially implemented the current solution with the original [GPUImage](https://github.com/BradLarson/GPUImage), but later realized that a swift version [GPUImage2](https://github.com/BradLarson/GPUImage2) had been made.
-The API had changed slightly so I ended up rewriting most of it, with the logic mostly staying the same. GPUImage2 is really easy to work with and very powerful! Great job.
-
-#### HTTP vs Websocket
-I always start out with the simplest solution that I expect to work. In order to control the stepper motor I would send HTTP requests from my iPhone directly to the ESP8266, which also were functioning as an accesspoint. However when getting close to 10-20 request per seconds the ESP would eventually crash. Further the latency were rather high, typical around 100 ms. Eventually I decided to use a websocket instead. It was surprisingly simple to setup and it has been performing great. I were able to achieve a roundtrip latency of around 5 ms and it's rock stable. Digging a little deeper it seems that it would be benificial to have a UDP datalink for the low latency information compared to a TCP which is the underlying protocol of the websocket. However TCP seems good enough for now.
-
-#### WebsocketServer on Laptop or the ESP
-Initially I tried to run the WebSocketServer on the ESP, but I ended up moving the server to the MacBook.
-This means I don't have to worry about the WebSocketServer performance. You can do faster iterations and easier debugging.
-The server could be written in a high level programming language.
-Since all data passes through my laptop it's easy to log it to a file and should be easy to implement the auto guidence system.
-It seems like the MB Air has better wifi performance as a router than the ESP8266, meaning longer range for other systems.
-Of cause it adds and extra step between the camera and motor controller, but it seems to be worth it.
-
-#### Artificial Intilligence - Python vs Node
-Being a newbie to the field of Machine learning I can highly recommend these two series on machinelearnig:
-
-* Machine Learning Course - CS 156 by Caltech: https://www.youtube.com/watch?v=mbyG85GZ0PI&list=PLD63A284B7615313A,
-* Networks Demystified by Welch Labs: https://www.youtube.com/watch?v=bxe2T-V8XRs&list=PLK1aXp7PZ2tMrm1h_JDBcJDhIpbQZPOr1
-
-I used at least a day trying to figure out how to run any deep neural network code in python and never actually managed to run anything if I also wanted to be able to directly plot the results with Matplotlib. I think I tried: scikit-learn, PyBrain and scikit-neuralnetwork in all combinations with System (Python 2.7 installation), PyEnv (3.4, 3.5) and Anaconda. And in every instance there were something wrong. Just wanting to get something running I ended up using Synaptic:  http://synaptic.juancazala.com/, which can be run on Node or in your browser - plotting solved! And it worked out of the box! ah. It's sad that Python version and package management can be such a pain.
-
-
 # Cool (Relevant) Articles for Kite Energy
 
 * M.L. LOYD.  "Crosswind kite power (for large-scale wind power production)" Journal of Energy, Vol. 4, No. 3 (1980), pp. 106-111.
 [link](http://edge.rit.edu/content/R15901/public/Matt%20Kennedy/homes.esat.kuleuven.be_~highwind_wp-content_uploads_2011_07_Loyd1980.pdf))
 * Diehl, Moritz. "Airborne wind energy: Basic concepts and physical foundations." Airborne Wind Energy. Springer Berlin Heidelberg, 2013. 3-22. [link](http://homes.esat.kuleuven.be/~highwind/wp-content/uploads/2013/08/Diehl2013a.pdf)
 * Giesbrecht, J., et al. "Path tracking for unmanned ground vehicle navigation." DRDC Suffield TM 224 (2005). [link](http://cradpdf.drdc-rddc.gc.ca/PDFS/unc45/p524913.pdf)
+
+# Competing companies
+
+While there currently is 100+ organizations involved in airborne wind energy [ref](http://energykitesystems.net/AWEstakeholders/index.html) in varying states, three companies really stand out as  
+* Makani. Founded in 2006. Developing a hard wing with mounted generators and engines for control and power generation. Should be starting a trial with a 600 kW version in Hawaii very soon. Investment in 2006 and 2008 of a combined of 15 million USD. [website](https://www.google.com/makani/) - [wikipedia](https://en.wikipedia.org/wiki/Makani_Power).  [ref](http://www.itechpost.com/articles/9658/20130523/google-x-makani-power-make-traditional-wind-energy-obsolete.htm)
+* Ampyx power. Founded in 2008. Developing a hard wing, sailplane line, kite with ground based generator. Total investment of at least 4.5 million euro [ref](https://www.ampyxpower.com/partners). [website](https://www.ampyxpower.com) -
+* SkySails. Founded in 2001. Developing a soft kite with ground based generator. Has experience from developing a 300 m2 kite for pulling cargo ships. Investment in research in kite related activities to date 50 million euros [ref](http://www.skysails.info/english/power/development/). [website](http://www.skysails.info/)
