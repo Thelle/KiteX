@@ -12,7 +12,7 @@ The energy that you can extract from the wind is largely related with the swept 
 
 Two further advantages of the kite system is that it can more easily capture wind at higher altitudes where the wind is more consistent, delivering the rated output a higher degree of the time. This will become especially important as a larger portion of the locally generated energy is from "unreliable" sources. Since the bending moment on the foundation of a kite mill is small to non-existent it will be much easier to setup these kite system in offshore conditions.
 
-From a technical perspective it would have been possible to make such a kite ever since the invention of the computer, but right now we are getting to a point in time where advances in materials and computer technology make is a viable and cheaper options.
+From a technical perspective it would have been possible to make such a kite ever since the invention of the computer, but right now we are getting to a point in time where advances in materials and computer technology make it a viable and cheaper option.
 
 ## What is the purpose of KiteX
 We would like to promote and carry out the development of kite technology in order to create a future with cheaper and only renewable energy. Cheaper energy will help societies reduce the average amount of "hard" work required to sustain a given living standard freeing up time to pursue more interesting exercises. We find the reflections in these answers quite interesting: [Quora - if energy was  free](https://www.quora.com/If-energy-was-free-and-renewable-how-would-the-economy-be-fundamentally-different-from-what-it-is-now)
@@ -52,7 +52,7 @@ Overall the system consists of a kite, a motorized kite steering system, a lapto
 **Significant mechanical parts:**
 
 * The kite is two lined foil kite HQ Symphony PRO 1.3. The kite were chosen for being the smallest high quality foil kite available. Being so small meant the pull would be the least powerful giving the stepper motor the best chance for staying in control. Thanks to [Dragestedet - Symphony](http://dragestedet.dk/product.asp?product=4179) for aiding in selecting the best kite. Chose the rainbow color options for best standout against the sky and grass.
-* Ronstan Series 20 Orbit blocks. Weighting only 9 grams each these 250 kg (working load) pulleys are light enough not to fall down and effecting the control in light wind and strong enough for the most serious gust.
+* Ronstan Series 20 Orbit blocks. Weighing only 9 grams each these 250 kg (working load) pulleys are light enough not to fall down and effecting the control in light wind and strong enough for the most serious gust.
 * NEMA-17 42BYGHW811 Stepper motor. This seems to be one of the most powerful (High torque and high speeds) NEMA-17 Steppers available. High Rated Current, Low Resistance and phase Inductance! [ArduinoTech.dk stepper](https://arduinotech.dk/shop/stepper-motor-nema17-42byghw811/) sells this motor incredible cheap seems to deliver reliably.
 * Solid storm anchors with the eye close to the ground. While this isn't a specific model I have been very happy with the performance of these *camping* storm anchors [Campingshop.dk](http://www.campingshop.dk/stormanker-med-oeje.aspx)
 
